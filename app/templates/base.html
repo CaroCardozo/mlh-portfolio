@@ -25,7 +25,9 @@
 ('/', 'index', 'About'),
 ('/projects/','projects', 'Projects'),
 ('/contact/', 'contact', 'Contact'),
-('/resume/', 'resume','Resume')
+('/resume/', 'resume','Resume'),
+('/login/', 'login','Login'),
+('/register/', 'register','Register')
 ] -%}
 {% set active_page = active_page|default('index') -%}
 
@@ -57,7 +59,7 @@
             {% block content %}{% endblock %}
         </section>
         <footer class="mt-auto">
-            <p>Copyright &copy; Current Year Miyabi Serizawa</p>
+            <p>Copyright &copy; 2021 Carolina Cardozo</p>
         </footer>
 
     </div>

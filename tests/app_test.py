@@ -27,6 +27,13 @@ def test_resume(client):
     response = client.get("/resume/", content_type="html/text")
     assert response.status_code == 200
 
+def test_resume(client):
+    response = client.get("/login/", content_type="html/text")
+    assert response.status_code == 200
+
+def test_resume(client):
+    response = client.get("/register/", content_type="html/text")
+    assert response.status_code == 200
 
 def test_404(client):
     response = client.get("/oops/", content_type="html/text")
