@@ -11,7 +11,7 @@ app = Flask(__name__)
 app.config['DATABASE'] = os.path.join(os.getcwd(), 'flask.sqlite')
 db.init_app(app)
 
-app.wsgi_app = WhiteNoise(app.wsgi_app, root="static/")
+app.wsgi_app = WhiteNoise(app.wsgi_app, root="app/static/")
 
 app.register_blueprint(portfolio)
 
