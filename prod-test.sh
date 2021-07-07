@@ -66,5 +66,5 @@ var=`curl -s -X POST -d "username=mario.espinoza&password=1234" 'https://caroc.d
 if [ "$var" != "Login Successful" ]; then
     count=1
 fi
-echo $count
+exit $count
 #return $count
