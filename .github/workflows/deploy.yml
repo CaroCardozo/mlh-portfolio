@@ -46,4 +46,3 @@ jobs:
         run: |
           cd ${{ secrets.PROJECT_ROOT }}
           bash prod-test.sh
-          echo "The result was $?"
