@@ -43,6 +43,4 @@ jobs:
           fetch-depth: 0
 
       - name: Check the access Login & Register
-        run: |
-          cd ${{ secrets.PROJECT_ROOT }}
-          bash prod-test.sh
+        run: ssh my-vm 'cd ${{ secrets.PROJECT_ROOT }} && bash prod-test.sh'
