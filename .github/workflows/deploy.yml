@@ -36,3 +36,14 @@ jobs:
 
       - name: Discord notification on deployment
         run: ssh my-vm 'curl -s -X POST "${{ secrets.DISCORD_WEBHOOK }}" -d "content=🚀 Deployment Successful"'
+
+      - name: Checkout github
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Check the access Login & Register
+        run: |
+          cd ${{ secrets.PROJECT_ROOT }}
+          bash prod-test.sh
+          echo "The result was $?"
