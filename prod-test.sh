@@ -68,3 +68,4 @@ if [ "$var" != "Login Successful" ]; then
 fi
 exit $count
 #return $count
+#echo $count
