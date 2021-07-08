@@ -34,9 +34,6 @@ jobs:
       - name: Print container status
         run: ssh my-vm 'cd ${{ secrets.PROJECT_ROOT }} && docker-compose ps'
 
-      - name: Discord notification on deployment
-        run: ssh my-vm 'curl -s -X POST "${{ secrets.DISCORD_WEBHOOK }}" -d "content=🚀 Deployment Successful"'
-
       - name: Checkout github
         uses: actions/checkout@v2
         with:
@@ -44,3 +41,9 @@ jobs:
 
       - name: Check the access Login & Register
         run: ssh my-vm 'cd ${{ secrets.PROJECT_ROOT }} && bash prod-test.sh'
+
+      - name: Discord notification on deployment
+        if: ${{ failure() }}
+        run: ssh my-vm 'curl -s -X POST "${{ secrets.DISCORD_WEBHOOK }}" -d "content=💀 Deployment Failed"'
+        if: ${{ !failure() }}
+        run: ssh my-vm 'curl -s -X POST "${{ secrets.DISCORD_WEBHOOK }}" -d "content=🚀 Deployment Successful"'
