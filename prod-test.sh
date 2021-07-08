@@ -27,7 +27,7 @@ fi
 
 #R-U-P
 var=`curl -s -X POST -d "username=locos&password=1234" 'https://caroc.duckdns.org/register/'`
-if [ "$var" != "User loco created successfully" ]; then
+if [ "$var" = "User loco created successfully" ]; then
     count=1
 fi
 
