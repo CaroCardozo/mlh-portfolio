@@ -44,8 +44,8 @@ jobs:
 
       - name: Discord notification on deployment right
         if: ${{ !failure() }}
-        run: ssh my-vm 'curl -s -X POST "${{ secrets.DISCORD_WEBHOOK }}" -d "content=🚀 Deployment Successful"'
+        run: curl -s -X POST "${{ secrets.DISCORD_WEBHOOK }}" -d "content=🚀 Deployment Successful"
       
       - name: Discord notification on deployment error
         if: ${{ failure() }}
-        run: ssh my-vm 'curl -s -X POST "${{ secrets.DISCORD_WEBHOOK }}" -d "content=💀 Deployment Failed"'
+        run: curl -s -X POST "${{ secrets.DISCORD_WEBHOOK }}" -d "content=💀 Deployment Failed"
