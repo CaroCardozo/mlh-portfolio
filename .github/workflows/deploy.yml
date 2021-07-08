@@ -42,6 +42,10 @@ jobs:
       - name: Check the access Login & Register
         run: ssh my-vm 'cd ${{ secrets.PROJECT_ROOT }} && bash prod-test.sh'
 
-      - name: Discord notification on deployment
+      - name: Discord notification on deployment right
         if: ${{ !failure() }}
         run: ssh my-vm 'curl -s -X POST "${{ secrets.DISCORD_WEBHOOK }}" -d "content=🚀 Deployment Successful"'
+      
+      - name: Discord notification on deployment error
+        if: ${{ failure() }}
+        run: ssh my-vm 'curl -s -X POST "${{ secrets.DISCORD_WEBHOOK }}" -d "content=💀 Deployment Failed"'
