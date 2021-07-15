@@ -26,8 +26,8 @@ if [ "$var" != "Password is required." ]; then
 fi
 
 #R-U-P
-var=`curl -s -X POST -d "username=loco&password=1234" 'https://caroc.duckdns.org/register/'`
-if [ "$var" != "User loco created successfully" ]; then
+var=`curl -s -X POST -d "username=mario.espinoza&password=1234" 'https://caroc.duckdns.org/register/'`
+if [ "$var" != "User mario.espinoza created successfully" ]; then
     count=1
 fi
 
