@@ -2,10 +2,10 @@
 
 count=0
 #login page
-var=`curl -s --request GET 'https://caroc.duckdns.org/login/'`
-if [ "$var" != "Login Page not yet implemented" ]; then
-    count=1
-fi
+#var=`curl -s --request GET 'https://caroc.duckdns.org/login/'`
+#if [ "$var" != "Login Page not yet implemented" ]; then
+#    count=1
+#fi
 
 #register page
 var=`curl -s --request GET 'https://caroc.duckdns.org/register/'`

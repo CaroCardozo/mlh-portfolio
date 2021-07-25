@@ -90,4 +90,11 @@ def login():
             return error, 418
     
     ## TODO: Return a login page
-    return "Login Page not yet implemented", 501
+    ##return "Login Page not yet implemented", 501
+    title = "Login"
+    description = "Login"
+    return render_template(
+        "login.html",
+        title=title,
+        description=description,
+    )
