@@ -1,7 +1,7 @@
 #!/bin/bash
 
 count=0
-#login page
+#login page (now is implemented)
 #var=`curl -s --request GET 'https://caroc.duckdns.org/login/'`
 #if [ "$var" != "Login Page not yet implemented" ]; then
 #    count=1
