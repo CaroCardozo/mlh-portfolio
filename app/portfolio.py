@@ -52,9 +52,7 @@ def resume():
         description=description,
     )
 
-@portfolio.route('/health/')
-def health():
-    return "Works"
+
 
 
 
