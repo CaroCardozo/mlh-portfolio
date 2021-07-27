@@ -37,6 +37,8 @@ if [ "$var" != "User mario.espinoza is already registered." ]; then
     count=1
 fi
 
+echo "After register the count is $count"
+
 #L-Nu
 var=`curl -s --request POST 'https://caroc.duckdns.org/login/'`
 if [ "$var" != "Incorrect username." ]; then
@@ -66,6 +68,7 @@ var=`curl -s -X POST -d "username=mario.espinoza&password=1234" 'https://caroc.d
 if [ "$var" != "Login Successful" ]; then
     count=1
 fi
+
 exit $count
 #return $count
 #echo $count
