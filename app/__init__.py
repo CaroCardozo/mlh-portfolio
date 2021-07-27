@@ -55,7 +55,7 @@ def not_found(error_message):
 def health():
     caro = UserModel.query.filter_by(username="caro").first()
     has_caro = "yes" if caro is not None else "no"
-    return f"Works, has caro: {user_count}"
+    return f"Works, has caro: {has_caro}"
 
 
 @app.route("/register/", methods=("GET", "POST"))
