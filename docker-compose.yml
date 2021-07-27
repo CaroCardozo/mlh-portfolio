@@ -42,6 +42,5 @@ services:
       - /sys:/sys:ro
       - /var/lib/docker/:/var/lib/docker:ro
 
-
 volumes:
   nginx_secrets:
